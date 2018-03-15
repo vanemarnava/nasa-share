@@ -6,12 +6,13 @@ import { SignUpLink } from './SignUp';
 import { PasswordForgetLink } from './PasswordForget';
 import { auth } from '../firebase';
 import * as routes from '../constants/routes';
+import './../css/SignIn.css';
 
 const SignInPage = ({ history }) =>
   <Grid>
     <Row>
       <Col className="logBody" xs={12} md={12}>
-        <h1>Inicia Sesion</h1>
+        <h1>Iniciar Sesión</h1>
         <SignInForm history={history} />
         <PasswordForgetLink />
         <SignUpLink />
@@ -70,25 +71,32 @@ class SignInForm extends Component {
       email === '';
 
     return (
-      <form onSubmit={this.onSubmit}>
-        <input
-          value={email}
-          onChange={event => this.setState(byPropKey('email', event.target.value))}
-          type="text"
-          placeholder="Email Address"
-        />
-        <input
-          value={password}
-          onChange={event => this.setState(byPropKey('password', event.target.value))}
-          type="password"
-          placeholder="Password"
-        />
-        <button disabled={isInvalid} type="submit">
-          Sign In
-        </button>
+      <Grid>
+        <Row>
+          <Col xs={12} md={12}>
+            <form onSubmit={this.onSubmit}>
+              <input className='sign'
+                value={email}
+                onChange={event => this.setState(byPropKey('email', event.target.value))}
+                type="text"
+                placeholder="Correo Electrónico"
+              />
+              <input className='sign'
+                value={password}
+                onChange={event => this.setState(byPropKey('password', event.target.value))}
+                type="password"
+                placeholder="Contraseña"
+              />
+              <br />
+              <button className='logButton' disabled={isInvalid} type="submit">
+                Ingresar!!
+              </button>
 
-        { error && <p>{error.message}</p> }
-      </form>
+              { error && <p>{error.message}</p> }
+            </form>
+          </Col>
+        </Row>
+      </Grid>
     );
   }
 }

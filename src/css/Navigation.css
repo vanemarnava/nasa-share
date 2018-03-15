@@ -1,0 +1,12 @@
+ul > li > a{
+	text-decoration: none;
+	color: red;
+}
+
+ul > li {
+	display: inline-block;
+}
+
+ul > li > a:hover{
+	color: #fff;
+}
