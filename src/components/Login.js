@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import { Grid, Row, Col } from 'react-flexbox-grid';
-import './App.css';
 
 class Login extends Component {
   render() {
