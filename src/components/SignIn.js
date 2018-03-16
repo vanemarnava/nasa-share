@@ -6,6 +6,7 @@ import { SignUpLink } from './SignUp';
 import { PasswordForgetLink } from './PasswordForget';
 import { auth } from '../firebase';
 import * as routes from '../constants/routes';
+
 import './../css/SignIn.css';
 
 const SignInPage = ({ history }) =>
@@ -74,26 +75,27 @@ class SignInForm extends Component {
       <Grid>
         <Row>
           <Col xs={12} md={12}>
-            <form onSubmit={this.onSubmit}>
-              <input className='sign'
-                value={email}
-                onChange={event => this.setState(byPropKey('email', event.target.value))}
-                type="text"
-                placeholder="Correo Electrónico"
-              />
-              <input className='sign'
-                value={password}
-                onChange={event => this.setState(byPropKey('password', event.target.value))}
-                type="password"
-                placeholder="Contraseña"
-              />
-              <br />
-              <button className='logButton' disabled={isInvalid} type="submit">
-                Ingresar!!
-              </button>
-
-              { error && <p>{error.message}</p> }
-            </form>
+            <Row center="xs">
+              <form onSubmit={this.onSubmit}>
+                <input className='sign'
+                  value={email}
+                  onChange={event => this.setState(byPropKey('email', event.target.value))}
+                  type="text"
+                  placeholder="Correo Electrónico"
+                />
+                <input className='sign'
+                  value={password}
+                  onChange={event => this.setState(byPropKey('password', event.target.value))}
+                  type="password"
+                  placeholder="Contraseña"
+                />
+                <br />
+                <button className='logButton' disabled={isInvalid} type="submit">
+                  Ingresar!!
+                </button>
+                { error && <p>{error.message}</p> }
+              </form>
+            </Row>
           </Col>
         </Row>
       </Grid>

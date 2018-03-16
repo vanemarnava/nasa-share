@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-
 import { auth } from '../firebase';
+import { Grid, Row, Col } from 'react-flexbox-grid';
 
 const byPropKey = (propertyName, value) => () => ({
   [propertyName]: value,
@@ -45,25 +45,35 @@ class PasswordChangeForm extends Component {
       passwordOne === '';
 
     return (
-      <form onSubmit={this.onSubmit}>
-        <input
-          value={passwordOne}
-          onChange={event => this.setState(byPropKey('passwordOne', event.target.value))}
-          type="password"
-          placeholder="New Password"
-        />
-        <input
-          value={passwordTwo}
-          onChange={event => this.setState(byPropKey('passwordTwo', event.target.value))}
-          type="password"
-          placeholder="Confirm New Password"
-        />
-        <button disabled={isInvalid} type="submit">
-          Reset My Password
-        </button>
-
-        { error && <p>{error.message}</p> }
-      </form>
+      <Grid>
+        <Row>
+          <Col xs={12} md={12}>
+            <Row  center="xs">
+              <form onSubmit={this.onSubmit}>
+                <input 
+                  className='sign'
+                  value={passwordOne}
+                  onChange={event => this.setState(byPropKey('passwordOne', event.target.value))}
+                  type="password"
+                  placeholder="Nueva Contraseña"
+                />
+                <input
+                  className='sign'
+                  value={passwordTwo}
+                  onChange={event => this.setState(byPropKey('passwordTwo', event.target.value))}
+                  type="password"
+                  placeholder="Confirma nueva contraseña"
+                />
+                <br />
+                <button className='logButton' disabled={isInvalid} type="submit">
+                  Resetea la contraseña
+                </button>
+                { error && <p>{error.message}</p> }
+              </form>
+            </Row>
+          </Col>
+        </Row>
+      </Grid>
     );
   }
 }

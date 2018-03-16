@@ -7,10 +7,14 @@ class HomePage extends Component {
 
 	render () {
 		return (
-			<div>
-    		<h1>Home Page</h1>
-    		<p>Estoy en el homeeeeee!!!!</p>
-  		</div>
+			<Grid>
+				<Row>
+					<Col xs={12} md={12}>
+					  <h1>Home Page</h1>
+		    		<p>Estoy en el homeeeeee!!!!</p>
+					</Col>
+				</Row>
+			</Grid>
 		)
 	}
 }

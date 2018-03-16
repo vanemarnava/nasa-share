@@ -7,11 +7,17 @@ import PasswordChangeForm from './PasswordChange';
 import withAuthorization from './withAuthorization';
 
 const AccountPage = (props, { authUser }) =>
-  <div>
-    <h1>Account: {authUser.email}</h1>
-    <PasswordForgetForm />
-    <PasswordChangeForm />
-  </div>
+	<Grid>
+		<Row>
+			<Col xs={12} md={12}>
+		    <Row center="xs">
+		    	<h1>Account: {authUser.email}</h1>
+		    	<PasswordForgetForm />
+		    	<PasswordChangeForm />
+		    </Row>
+			</Col>
+		</Row>
+	</Grid>
 
 AccountPage.contextTypes = {
   authUser: PropTypes.object,

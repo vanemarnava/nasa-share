@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 // importar firebase
 import { firebase } from '../firebase';
+import { Grid, Row, Col } from 'react-flexbox-grid';
 
 const withAuthentication = (Component) => {
   class WithAuthentication extends React.Component {
@@ -29,7 +30,13 @@ const withAuthentication = (Component) => {
 
     render() {
       return (
-        <Component />
+        <Grid>
+          <Row>
+            <Col>
+              <Component />
+            </Col>
+          </Row>
+        </Grid>
       );
     }
   }

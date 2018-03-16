@@ -4,14 +4,21 @@ import {
   withRouter,
 } from 'react-router-dom';
 import { auth } from '../firebase';
+import { Grid, Row, Col } from 'react-flexbox-grid';
 import * as routes from '../constants/routes';
 
 
 const SignUpPage = ({ history }) =>
-  <div>
-    <h1>SignUp</h1>
-    <SignUpForm history={history} />
-  </div>
+  <Grid>
+    <Row>
+      <Col className="logBody" xs={12} md={12}>
+        <Row center="xs">
+          <h1>Créate una Cuenta</h1>
+          <SignUpForm history={history} />
+        </Row>
+      </Col>
+    </Row>
+  </Grid>
 
 
 const INITIAL_STATE = {
@@ -73,46 +80,59 @@ class SignUpForm extends Component {
       username === '';
 
     return (
-      <form onSubmit={this.onSubmit}>
-      	<input
-          value={username}
-          onChange={event => this.setState(byPropKey('username', event.target.value))}
-          type="text"
-          placeholder="Full Name"
-        />
-        <input
-          value={email}
-          onChange={event => this.setState(byPropKey('email', event.target.value))}
-          type="text"
-          placeholder="Email Address"
-        />
-        <input
-          value={passwordOne}
-          onChange={event => this.setState(byPropKey('passwordOne', event.target.value))}
-          type="password"
-          placeholder="Password"
-        />
-        <input
-          value={passwordTwo}
-          onChange={event => this.setState(byPropKey('passwordTwo', event.target.value))}
-          type="password"
-          placeholder="Confirm Password"
-        />
-        <button disabled={isInvalid} type="submit">
-          Sign Up
-        </button>
-
-        { error && <p>{error.message}</p> }
-      </form>
+     <Grid>
+        <Row center="xs">
+          <Col className="logBody" xs={12} md={12}>
+              <form onSubmit={this.onSubmit}>
+                <input
+                  className='sign'
+                  value={username}
+                  onChange={event => this.setState(byPropKey('username', event.target.value))}
+                  type="text"
+                  placeholder="Nombre Completo"
+                />
+                <br />
+                <input
+                  className='sign'
+                  value={email}
+                  onChange={event => this.setState(byPropKey('email', event.target.value))}
+                  type="text"
+                  placeholder="Correo Electrónico"
+                />
+                <br />
+                <input
+                  className='sign'
+                  value={passwordOne}
+                  onChange={event => this.setState(byPropKey('passwordOne', event.target.value))}
+                  type="password"
+                  placeholder="Contraseña"
+                />
+                <br />
+                <input
+                  className='sign'
+                  value={passwordTwo}
+                  onChange={event => this.setState(byPropKey('passwordTwo', event.target.value))}
+                  type="password"
+                  placeholder="Confirma Contraseña"
+                />
+                <br />
+                <button className='logButton' disabled={isInvalid} type="submit">
+                  Sign Up
+                </button>       
+                { error && <p>{error.message}</p> }
+              </form>
+          </Col>
+        </Row>
+     </Grid>
     );
   }
 }
 
 const SignUpLink = () =>
   <p>
-    Don't have an account?
+    Aún no tienes una cuenta??
     {' '}
-    <Link to={routes.SIGN_UP}>Sign Up</Link>
+    <Link to={routes.SIGN_UP}>Créala!!</Link>
   </p>
 
 export default withRouter(SignUpPage);

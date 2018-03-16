@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-
+import { Grid, Row, Col } from 'react-flexbox-grid';
 import { auth } from '../firebase';
 
 const PasswordForgetPage = () =>
-  <div>
-    <h1>PasswordForget</h1>
-    <PasswordForgetForm />
-  </div>
+  <Grid>
+    <Row center="xs">
+      <Col xs={12} md={12}>
+        <h1>Contraseña Olvidada</h1>
+        <PasswordForgetForm />
+      </Col>
+    </Row>
+  </Grid>
 
 const byPropKey = (propertyName, value) => () => ({
   [propertyName]: value,
@@ -48,27 +52,40 @@ class PasswordForgetForm extends Component {
     const isInvalid = email === '';
 
     return (
-      <form onSubmit={this.onSubmit}>
-        <input
-          value={this.state.email}
-          onChange={event => this.setState(byPropKey('email', event.target.value))}
-          type="text"
-          placeholder="Email Address"
-        />
-        <button disabled={isInvalid} type="submit">
-          Reset My Password
-        </button>
-
-        { error && <p>{error.message}</p> }
-      </form>
+      <Grid>
+        <Row>
+          <Col className="logBody" xs={12} md={12}>
+            <Row center="xs">
+              <form onSubmit={this.onSubmit}>
+                <input className='sign'
+                  value={this.state.email}
+                  onChange={event => this.setState(byPropKey('email', event.target.value))}
+                  type="text"
+                  placeholder="Correo Electrónico"
+                />
+                <button className='logButton' disabled={isInvalid} type="submit">
+                Resetea la contraseña
+                </button>
+                { error && <p>{error.message}</p> }
+              </form>
+            </Row>
+          </Col>
+        </Row>
+      </Grid>
     );
   }
 }
 
 const PasswordForgetLink = () =>
-  <p>
-    <Link to="/pw-forget">Forgot Password?</Link>
-  </p>
+  <Grid>
+    <Row>
+      <Col className='sign' xs={12} md={12}>
+        <p>
+          <Link to="/pw-forget">Olvidaste la contraseña?</Link>
+        </p>
+      </Col>
+    </Row>
+  </Grid>
 
 export default PasswordForgetPage;
 
