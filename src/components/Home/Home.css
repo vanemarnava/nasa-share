@@ -1,16 +1,17 @@
 .userLeft {
   background-color: #eee;
+  color: black;
   height: 90vh;
 }
 
 .userLeft img {
   width: 50%;
-  margin-left: 25%;
 }
 
 .imageRight {
   background-color: rgba(255,255,255, .6);
   padding: 20px 10px;
+  color: black;
 }
 
 .imageRight img {

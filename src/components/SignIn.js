@@ -7,7 +7,7 @@ import { PasswordForgetLink } from './PasswordForget';
 import { auth } from '../firebase';
 import * as routes from '../constants/routes';
 
-import './../css/SignIn.css';
+// import './../css/SignIn.css';
 
 const SignInPage = ({ history }) =>
   <Grid>
