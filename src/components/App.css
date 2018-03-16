@@ -3,6 +3,7 @@ body{
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
   height: 110vh; /*ver si cambiar a auto*/
   margin: 0;
   padding: 0;
