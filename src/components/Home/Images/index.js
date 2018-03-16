@@ -34,12 +34,13 @@ class Images extends Component {
     const title = this.state.data.title;
     const image = this.state.data.url;
     const explanation = this.state.data.explanation;
+    const date = this.state.data.date;
 
     if (Object.keys(this.state.data).length > 0) {
       return (
         
         <div className="container-fluid">
-          <h1>Imagen del día</h1>
+          <h1>Imagen del día / {date}</h1>
           <h2>{title}</h2>
           <img src={image}/>
           {explanation}
