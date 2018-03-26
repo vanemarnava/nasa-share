@@ -38,8 +38,9 @@ A continuación se muestra un esquema con los distintos componentes que posee el
 
 ![Ejemplo / Componentes ](src/img/wire-frame-nasa-share.jpg)
 
-
-Autoras
--------
+### Autoras
  
 [*Carol Sepúlveda*](https://github.com/carol-solivos) & [*Vanessa Martínez*](https://github.com/vanemarnava)
+
+### Desarrollado para 
+[*Laboratoria*](http://www.laboratoria.la/)
