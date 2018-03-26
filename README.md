@@ -1,5 +1,7 @@
 
-# Nasa Share | Puedes visualizarlo en este link: [*nasa-share.herokuapp.com*](https://nasa-share.herokuapp.com/)
+# Nasa Share 
+
+Puedes visualizarlo en este link: [*nasa-share.herokuapp.com*](https://nasa-share.herokuapp.com/)
 
 Nasa Share es un lugar en donde los amantes del infinito universo pueden disfrutar de las maravillosas imagenes que diariamente desde el año 1995 la Nasa comparte con el mundo entero. 
 
@@ -40,7 +42,7 @@ A continuación se muestra un esquema con los distintos componentes que posee el
 
 ### Autoras
  
-[*Carol Sepúlveda*](https://github.com/carol-solivos) & [*Vanessa Martínez*](https://github.com/vanemarnava)
+[*Vanessa Martinez*](https://github.com/vanemarnava) & [*Carol Sepulveda*](https://github.com/carol-solivos) 
 
 ### Desarrollado para 
 [*Laboratoria*](http://www.laboratoria.la/)
